@@ -23,6 +23,7 @@ public abstract class Room implements IChargeable {
 
     /**
      * A room has a length, width, height and a floor type.
+     * Initialize all fields of the class.
      *
      * @param roomLength Length of the room.
      * @param roomWidth Width of the room.
@@ -40,13 +41,17 @@ public abstract class Room implements IChargeable {
     /**
      * Computes the volume of the room
      * <br>
-     * Volume is computed as (roomLength * roomWidth * roomHeight)
+     * <ul>
+     * <li>Volume is computed as (roomLength * roomWidth * roomHeight). </li>
+     * </ul>
+     * @return Return volume of the room.
      */
     public int getVolume() {
         return (this.roomLength * this.roomWidth * this.roomHeight);
     }
 
     /**
+     * Returns length of the room.
      * @return Length roomLength
      */
     public int getRoomLength() {
@@ -56,7 +61,10 @@ public abstract class Room implements IChargeable {
     /**
      * Computes the surface area of the room.
      * <br>
-     * Surface Area is calculated as 2*(length * width + width * height + height * length)
+     * <ul>
+     * <li>Surface Area is calculated as 2*(length * width + width * height + height * length). </li>
+     * </ul>
+     * @return Return surface area of the room.
      */
     public int getSurfaceArea() {
         return 2 * this.roomHeight * (this.roomLength + this.roomWidth) + 2 * this.roomLength * this.roomWidth;
@@ -64,6 +72,7 @@ public abstract class Room implements IChargeable {
 
     /**
      * An abstract method that computes the room's bill.
+     * @return Bill for the room.
      */
     public abstract int getBill();
 

@@ -74,7 +74,7 @@ public class InheritanceTest {
 	}
 
 	/**
-	 * Tests getters for Floor & Building.
+	 * Tests getters of Floor and Building.
 	 * 
 	 */
 	@Test

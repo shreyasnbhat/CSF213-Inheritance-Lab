@@ -1,6 +1,6 @@
 /**
  * This class simulates a Building.
- * Implements the IBuilding & IChargeable interface.
+ * Implements the IBuilding and IChargeable interface.
  */
 public class Building implements IBuilding, IChargeable {
 
@@ -17,7 +17,7 @@ public class Building implements IBuilding, IChargeable {
      */
     private int height;
     /**
-     * An array of floors to store all floors in a building
+     * An array of floors to store all floors in a building.
      */
     private Floor floors[];
     /**
@@ -36,8 +36,8 @@ public class Building implements IBuilding, IChargeable {
      * <li> Set floorCount as 0 </li>
      * </ul>
      *
-     * @param length Length of the building
-     * @param width  Width of the building
+     * @param length Length of the building.
+     * @param width  Width of the building.
      */
     public Building(int length, int width) {
         this.length = length;
@@ -95,7 +95,7 @@ public class Building implements IBuilding, IChargeable {
 
 
         /**
-         * Constructor to initialize fields. All rooms in the floor have the same width and height as the building, the length may vary.
+         * Constructor to initialize fields. All rooms in the floor have the same width and height, the length may vary.
          * <ul>
          * <li>Initialize <strong>maxRoomCount</strong> as 10</li>
          * <li>Set floorLength as the length of the building</li>
@@ -121,16 +121,17 @@ public class Building implements IBuilding, IChargeable {
          * Computes the surface area of the floor.
          * <br>
          * Surface Area is calculated as 2 * ( length * width + width * height + height * length )
+         * @return Return surface area of the building.
          */
         public int getSurfaceArea() {
             return 2 * this.floorHeight * (this.floorLength + this.floorWidth) + 2 * this.floorLength * this.floorWidth;
         }
 
         /**
-         * If more rooms can be added then ,add the room to this floor, update free space & room count and return true.
+         * If more rooms can be added then add the room to this floor, update free space and room count and return true.
          * A room might not be added due to any of the below reasons
          * <ul>
-         * <li>roomLength < freeSpaceLeftForRoom</li>
+         * <li>roomLength is greater than freeSpaceLeftForRoom</li>
          * <li>roomCount = maxRoomCount</li>
          * </ul>
          *
@@ -178,7 +179,8 @@ public class Building implements IBuilding, IChargeable {
     }  // end floor class.
 
     /**
-     * Adds a floor to a building if floorCount < maxFloors.
+     * 
+     * Adds a floor to a building if floorCount is less than maxFloors. 
      * <ul>
      * <li> floorCount gets incremented. </li>
      * <li> height gets updated.</li>
@@ -194,6 +196,7 @@ public class Building implements IBuilding, IChargeable {
     }
 
     /**
+     *   Returns number of floors in the building.
      * @return Number of floors in the building.
      */
     public int getFloorCount() {
@@ -228,6 +231,7 @@ public class Building implements IBuilding, IChargeable {
     }
 
     /**
+     * Calculates and returns surface area of the building.
      * @return Returns surface area of the building.
      * Use the formula 2 * h * ( l + b ) + 2 * l * b.
      * where h, l, b represent height, length and width of the building respectively.

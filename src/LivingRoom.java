@@ -3,15 +3,28 @@
  */
 public class LivingRoom extends Room {
 
+
+    /**
+     * A boolean to keep track whether the TV is on or not.
+     * Set to True if on.
+     */
     private boolean tvState;
+    
+    /**
+     * Stores the electricity bill for the livingroom.
+     */
     private int electricityBill;
 
     /**
-     * @param roomLength
-     * @param roomWidth
-     * @param roomHeight
-     * @param type
-     * Initializes default values for tvState & electricityBill and construct a room.
+     * Initialize all fields of the class.
+     * <ul>
+     * <li> Set electricityBill as 0 </li>
+     * <li> Set tvState as false </li>
+     * </ul>
+     * @param roomLength Length of the livingroom.
+     * @param roomWidth Width of the livingroom.
+     * @param roomHeight Height of the livingroom.
+     * @param type FloorType of the livingroom.
      */
     public LivingRoom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         super(roomLength, roomWidth, roomHeight, type);
@@ -20,8 +33,11 @@ public class LivingRoom extends Room {
     }
     
     /**
-     *  If the tv is already on, then increment electricity bill by 5.
-     *  otherwise switch on the tv and increment the electricity bill by 10.
+     *  Simulates watching TV. <br>
+     *  <ul>
+     *  <li>If the TV is already on, then increment electricity bill by 5. </li>
+     *  <li>Otherwise switch on the TV and increment the electricity bill by 10. </li>
+     * </ul>
      */
     public void watchTV() {
         if (!this.tvState) {
@@ -33,7 +49,7 @@ public class LivingRoom extends Room {
     }
 
     /**
-     * @return electricity bill for a livingroom
+     * @return Electricity bill for a livingroom.
      */
     public int getBill() {
         return electricityBill;

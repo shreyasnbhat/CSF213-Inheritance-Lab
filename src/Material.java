@@ -1,5 +1,5 @@
 /**
- * Material types for a bed : an enum of STEEL, WOODEN & PLASTIC.
+ * Material types for a bed : an enumeration of STEEL, WOODEN and PLASTIC.
  */
 public enum  Material {
     STEEL,

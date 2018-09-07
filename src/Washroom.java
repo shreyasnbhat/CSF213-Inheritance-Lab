@@ -10,25 +10,30 @@ public class Washroom extends Room {
     private int waterBill;
 
     /**
-     * @param roomLength
-     * @param roomWidth
-     * @param roomHeight
-     * @param floortype
-     * Initializes default value for waterBill & construct a room.
+     * Initialize all fields of the class.
+     * <ul>
+     * <li> Set waterBill as 0 </li>
+     * </ul>
+     * 
+     * @param roomLength Length of the washroom.
+     * @param roomWidth Width of the washroom.
+     * @param roomHeight Height of the washroom.
+     * @param type FloorType of the washroom.
+     * 
      */
     public Washroom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         super(roomLength, roomWidth, roomHeight, type);
         this.waterBill = 0;
     }
     /**
-     * @returns returns the waterbill for a washroom. 
+     * @return Return the waterbill for a washroom. 
      */
     public int getBill() {
         return waterBill;
     }
 
     /**
-     * @returns For a washroom : if floortype is VINYL, then returns 10, else returns 20.
+     * @return For a washroom : if floortype is VINYL, then returns 10, else returns 20.
      */
     public int getCost() {
         if (type == FloorType.VINYL) {
@@ -39,7 +44,10 @@ public class Washroom extends Room {
     }
 
     /**
-     * Important to flush after use! Increments the waterbill by 10 followed by a handwash.
+     * Important to flush after use.
+     * <ul>
+     * <li>Increments the waterbill by 10 followed by a handwash. </li>
+     * </ul>
      */
     public void flush() {
         this.waterBill += 10;
@@ -47,7 +55,10 @@ public class Washroom extends Room {
     }
 
     /**
-     * Keeps your hands clean. Increments the waterbill by 2.
+     * Keeps your hands clean. 
+     * <ul>
+     * <li>Increments the waterbill by 2.</li>
+     * </ul>
      */
     public void handWash() {
         this.waterBill += 2;
@@ -55,7 +66,9 @@ public class Washroom extends Room {
 
     /**
      * Makes your teeth shine bright.
-     * Increments the waterbill by 4.
+     * <ul>
+     * <li> Increments the waterbill by 4. </li>
+     * </ul>
      */
     public void brushTeeth() {
         this.waterBill += 4;

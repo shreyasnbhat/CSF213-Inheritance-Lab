@@ -1,5 +1,5 @@
 /**
- * Floor types for a room : an enum of WOODEN, MARBLE & VINYL.
+ * Floor types for a room : an enumeration  of WOODEN, MARBLE and VINYL.
  */
 public enum FloorType {
     WOODEN,
