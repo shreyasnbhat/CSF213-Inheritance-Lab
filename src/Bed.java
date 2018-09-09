@@ -9,22 +9,25 @@ public class Bed implements IChargeable{
 	
 
     /**
-     * Length of the bed
+     * Length of the bed.
      */
     private int length;
 
     /**
-     * Width of the bed
+     * Width of the bed.
      */
     private int width;
 
     /**
-     * The material used to build the bed
+     * The material used to build the bed.
      */
     private Material material;
 
     /**
-     * Constructor for the Bed
+     * Initialize all fields of the class.
+     * @param length Length of the bed.
+     * @param width Width of the bed.
+     * @param material Material of the bed.
      */
     
     public Bed(int length, int width, Material material) {
@@ -35,14 +38,16 @@ public class Bed implements IChargeable{
 
 
     /**
-     * @return Returns the length of bed.
+     * Returns length of the bed.
+     * @return Returns length of the bed.
      */
     public int getLength() {
         return length;
     }
 
     /**
-     * @return Returns the width of bed.
+     * Return width of the bed.
+     * @return Returns width of the bed.
      */
     public int getWidth() {
         return width;
