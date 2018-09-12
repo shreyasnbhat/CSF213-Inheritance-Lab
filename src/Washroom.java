@@ -1,12 +1,14 @@
 /**
- *	This class simulates a washroom.
+ * This class simulates a washroom.
+ *
+ * @author Shreyas Bhat
  */
 
 public class Washroom extends Room {
 
-	/**
-	 * To keep track of the waterbill of the washroom.
-	 */
+    /**
+     * To keep track of the waterbill of the washroom.
+     */
     private int waterBill;
 
     /**
@@ -14,19 +16,19 @@ public class Washroom extends Room {
      * <ul>
      * <li> Set waterBill as 0 </li>
      * </ul>
-     * 
+     *
      * @param roomLength Length of the washroom.
-     * @param roomWidth Width of the washroom.
+     * @param roomWidth  Width of the washroom.
      * @param roomHeight Height of the washroom.
-     * @param type FloorType of the washroom.
-     * 
+     * @param type       FloorType of the washroom.
      */
     public Washroom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         super(roomLength, roomWidth, roomHeight, type);
         this.waterBill = 0;
     }
+
     /**
-     * @return Return the waterbill for a washroom. 
+     * @return Return the waterbill for a washroom.
      */
     public int getBill() {
         return waterBill;
@@ -55,7 +57,7 @@ public class Washroom extends Room {
     }
 
     /**
-     * Keeps your hands clean. 
+     * Keeps your hands clean.
      * <ul>
      * <li>Increments the waterbill by 2.</li>
      * </ul>

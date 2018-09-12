@@ -1,8 +1,9 @@
 /**
  * This class is a general representation of a room.
- * Implements the IChargeable interface.
+ *
+ * @author Shreyas Bhat
  */
-public abstract class Room implements IChargeable {
+public abstract class Room {
 
     /**
      * Length of the room
@@ -26,9 +27,9 @@ public abstract class Room implements IChargeable {
      * Initialize all fields of the class.
      *
      * @param roomLength Length of the room.
-     * @param roomWidth Width of the room.
+     * @param roomWidth  Width of the room.
      * @param roomHeight Height of the room.
-     * @param type Floortype of the room.
+     * @param type       Floortype of the room.
      */
     public Room(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         this.roomLength = roomLength;
@@ -44,6 +45,7 @@ public abstract class Room implements IChargeable {
      * <ul>
      * <li>Volume is computed as (roomLength * roomWidth * roomHeight). </li>
      * </ul>
+     *
      * @return Return volume of the room.
      */
     public int getVolume() {
@@ -52,6 +54,7 @@ public abstract class Room implements IChargeable {
 
     /**
      * Returns length of the room.
+     *
      * @return Length roomLength
      */
     public int getRoomLength() {
@@ -64,6 +67,7 @@ public abstract class Room implements IChargeable {
      * <ul>
      * <li>Surface Area is calculated as 2*(length * width + width * height + height * length). </li>
      * </ul>
+     *
      * @return Return surface area of the room.
      */
     public int getSurfaceArea() {
@@ -72,12 +76,14 @@ public abstract class Room implements IChargeable {
 
     /**
      * An abstract method that computes the room's bill.
+     *
      * @return Bill for the room.
      */
     public abstract int getBill();
 
     /**
      * Computes cost of the room.
+     *
      * @return Cost of room
      * <ul>
      * <li>Cost = SurfaceArea of Room * 4 if floor type is MARBLE</li>

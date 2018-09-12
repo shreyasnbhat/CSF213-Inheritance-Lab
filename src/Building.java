@@ -1,8 +1,9 @@
 /**
  * This class simulates a Building.
- * Implements the IBuilding and IChargeable interface.
+ *
+ * @author Shreyas Bhat
  */
-public class Building implements IBuilding, IChargeable {
+public class Building  {
 
     /**
      * Length of the building.
@@ -25,7 +26,7 @@ public class Building implements IBuilding, IChargeable {
      */
     private int floorCount;
     /**
-     * The maximum number of floor in the building.
+     * The maximum number of floors in the building. Set it as 10.
      */
     static int maxFloors = 10;
 
@@ -50,7 +51,7 @@ public class Building implements IBuilding, IChargeable {
     /**
      * An inner class that represents a floor of a building.
      */
-    public class Floor implements IChargeable {
+    public class Floor  {
 
         /**
          * An array of Rooms to store all rooms in a floor.
@@ -121,6 +122,7 @@ public class Building implements IBuilding, IChargeable {
          * Computes the surface area of the floor.
          * <br>
          * Surface Area is calculated as 2 * ( length * width + width * height + height * length )
+         *
          * @return Return surface area of the building.
          */
         public int getSurfaceArea() {
@@ -152,6 +154,7 @@ public class Building implements IBuilding, IChargeable {
 
         /**
          * Cost is calculated as the summation of the cost of all rooms in the floor.
+         *
          * @return Cost of the floor
          */
         public int getCost() {
@@ -164,6 +167,7 @@ public class Building implements IBuilding, IChargeable {
 
         /**
          * Operating Cost is calculated as the summation of the bill of all rooms in the floor.
+         *
          * @return Operating cost of the floor
          */
         public int getOperatingCost() {
@@ -179,8 +183,7 @@ public class Building implements IBuilding, IChargeable {
     }  // end floor class.
 
     /**
-     * 
-     * Adds a floor to a building if floorCount is less than maxFloors. 
+     * Adds a floor to a building if floorCount is less than maxFloors.
      * <ul>
      * <li> floorCount gets incremented. </li>
      * <li> height gets updated.</li>
@@ -196,7 +199,8 @@ public class Building implements IBuilding, IChargeable {
     }
 
     /**
-     *   Returns number of floors in the building.
+     * Returns number of floors in the building.
+     *
      * @return Number of floors in the building.
      */
     public int getFloorCount() {
@@ -221,7 +225,6 @@ public class Building implements IBuilding, IChargeable {
      *
      * @return Sum of operating cost of all floors.
      */
-    @Override
     public int getOperatingCosts() {
         int operatingCost = 0;
         for (int i = 0; i < this.floorCount; i++) {
@@ -232,11 +235,11 @@ public class Building implements IBuilding, IChargeable {
 
     /**
      * Calculates and returns surface area of the building.
+     *
      * @return Returns surface area of the building.
      * Use the formula 2 * h * ( l + b ) + 2 * l * b.
      * where h, l, b represent height, length and width of the building respectively.
      */
-    @Override
     public int getSurfaceArea() {
         return 2 * this.height * (this.length + this.width) + 2 * this.length * this.width;
     }

@@ -1,12 +1,11 @@
 /**
  * A simple representation of a bed.
  * Implements the IChargeable interface.
- * @author Shreyas Bhat, Kunal Dewan
- * @version 1
- * 
+ *
+ * @author Shreyas Bhat
  */
-public class Bed implements IChargeable{
-	
+public class Bed  {
+
 
     /**
      * Length of the bed.
@@ -25,11 +24,12 @@ public class Bed implements IChargeable{
 
     /**
      * Initialize all fields of the class.
-     * @param length Length of the bed.
-     * @param width Width of the bed.
+     *
+     * @param length   Length of the bed.
+     * @param width    Width of the bed.
      * @param material Material of the bed.
      */
-    
+
     public Bed(int length, int width, Material material) {
         this.length = length;
         this.width = width;
@@ -39,6 +39,7 @@ public class Bed implements IChargeable{
 
     /**
      * Returns length of the bed.
+     *
      * @return Returns length of the bed.
      */
     public int getLength() {
@@ -47,6 +48,7 @@ public class Bed implements IChargeable{
 
     /**
      * Return width of the bed.
+     *
      * @return Returns width of the bed.
      */
     public int getWidth() {
@@ -56,10 +58,11 @@ public class Bed implements IChargeable{
     /**
      * Cost of the bed depends upon the material used for building it.
      * <ul>
-     *    <li>If the material is Wooden, then the cost is 200.</li>
-     *    <li>If the material is Steel, then the cost is 300.</li>
-     *    <li>If the material is Plastic, then the cost is 100.</li>
+     * <li>If the material is Wooden, then the cost is 200.</li>
+     * <li>If the material is Steel, then the cost is 300.</li>
+     * <li>If the material is Plastic, then the cost is 100.</li>
      * </ul>
+     *
      * @return The cost of building the bed.
      */
     public int getCost() {

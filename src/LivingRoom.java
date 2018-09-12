@@ -1,5 +1,6 @@
 /**
- *	This class simulates a livingroom. A boolean tvState is used to keep track whether the TV is on or not and an integer electricityBill is used.
+ *	This class simulates a Living Room. A boolean tvState is used to keep track whether the TV is on or not and an integer electricityBill is used.
+ * @author Shreyas Bhat
  */
 public class LivingRoom extends Room {
 
@@ -49,7 +50,7 @@ public class LivingRoom extends Room {
     }
 
     /**
-     * @return Electricity bill for a livingroom.
+     * @return Electricity bill for a Living Room.
      */
     public int getBill() {
         return electricityBill;

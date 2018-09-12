@@ -39,8 +39,10 @@ public class InheritanceTest {
 	 */
 	@Test
 	public void getFloorCountTest() {
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 5; i++) {
 			building.addFloor(building.new Floor(100));
+            Assert.assertEquals(i+1, building.getFloorCount());
+        }
 		Assert.assertEquals(5, building.getFloorCount());
 	}
 
@@ -207,38 +209,5 @@ public class InheritanceTest {
 		Assert.assertFalse(bedroom.addBed(new Bed(10, 10, Material.WOODEN)));
 		Assert.assertTrue(bedroom.addBed(new Bed(5, 5, Material.WOODEN)));
 	}
-	
-	/**
-	 * Tests for interfaces in the package with proper methods.
-	 * 
-	 */
-	@Test
-	public void interfaceConstructionTest() {
-		IChargeable ichargeable = new IChargeable() {
-			
-			@Override
-			public int getCost() {
-				// TODO Auto-generated method stub
-				return 9;
-			}
-		};
-		Assert.assertEquals(ichargeable.getCost(), 9);
-		IBuilding ibuilding = new IBuilding() {
-			
-			@Override
-			public int getSurfaceArea() {
-				return 9;
-			}
-			
-			@Override
-			public int getOperatingCosts() {
-				return 1997;
-			}
-		};
-		Assert.assertEquals(ibuilding.getSurfaceArea(), 9);
-		Assert.assertEquals(ibuilding.getOperatingCosts(), 1997);
-		
-	}
-	
-	
+
 }
