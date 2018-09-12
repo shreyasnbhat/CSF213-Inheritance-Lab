@@ -1,11 +1,9 @@
-import static org.junit.Assert.fail;
-
-import java.util.Random;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Random;
 
 /**
  * Unit tests for Washroom Class
@@ -13,11 +11,11 @@ import org.junit.Test;
  * @author Kunal Dewan
  * @version 12/9/2018
  */
-public class WashroomTest {
+public class WashRoomTest {
 
-    private Washroom room;
+    private WashRoom room;
     private Random rand;
-	
+
 
     @Before
     public void before() {
@@ -31,19 +29,20 @@ public class WashroomTest {
 
     @Test
     public void testWashroomGetters() {
-    	
-        int length = rand.nextInt();
-        int width = rand.nextInt();
-        int height = rand.nextInt();
-        room = new Washroom(length, width, height, FloorType.MARBLE);
+
+        int length = rand.nextInt(100) + 5;
+        int width = rand.nextInt(100) + 5;
+        int height = rand.nextInt(100) + 5;
+        room = new WashRoom(length, width, height, FloorType.MARBLE);
+
         //test getBill() when initialized
         Assert.assertEquals(0, room.getBill());
-        
+
         //test getCost
         Assert.assertEquals(20, room.getCost());
-        room = new Washroom(length, width, height, FloorType.VINYL);
+        room = new WashRoom(length, width, height, FloorType.VINYL);
         Assert.assertEquals(10, room.getCost());
-        
+
         //test getBill()
         room.brushTeeth();
         Assert.assertEquals(4, room.getBill());
@@ -51,9 +50,6 @@ public class WashroomTest {
         Assert.assertEquals(6, room.getBill());
         room.flush();
         Assert.assertEquals(18, room.getBill());
-        
-        
-        
 
     }
 }

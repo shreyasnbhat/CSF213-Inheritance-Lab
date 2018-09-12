@@ -11,12 +11,12 @@ public class BedRoom extends Room {
     private Bed bed;
 
     /**
-     * To keep track whether the AC is on or not.
+     * To keep track whether the AC is on or not. True if AC is on else false.
      */
     private boolean acState;
 
     /**
-     * To track whether the occupant is sleeping or not.
+     * To track whether the occupant is sleeping or not. True if occupant is asleep else false.
      */
     private boolean sleepState;
 
@@ -46,13 +46,15 @@ public class BedRoom extends Room {
     }
 
     /**
-     * If all the dimensions of the bed fit into the room (ignore the height of room) with ample space then assign bed for this bedroom.
+     * Set a bed for the room.
+     *
+     * If all the dimensions of the bed fit into the room (ignore the height of room) with ample space then assign bed for this bedroom. The dimensions of the bed must be strictly lesser than the room
      *
      * @param bed A Bed object
      * @return If bed added then return true,
      * otherwise return false.
      */
-    public boolean addBed(Bed bed) {
+    public boolean setBed(Bed bed) {
         if (bed.getLength() < this.roomLength && bed.getWidth() < this.roomWidth) {
             this.bed = bed;
             return true;
@@ -67,7 +69,7 @@ public class BedRoom extends Room {
      * Simulates sleep in the occupant's life. <br>
      * <ul>
      * <li>If there is a bed in the room and If the occupant is awake, then start the AC and go to sleep.
-     * <li>Otherwise if the occupant is already asleep then toggle the sleep state.
+     * <li>Otherwise if the occupant is already asleep then set sleepState to false
      * </ul>
      *
      * @return True if successfully slept.
@@ -85,7 +87,16 @@ public class BedRoom extends Room {
     }
 
     /**
-     * @return For a bedroom : return cost of bed  + cost of room.
+     * Return the sleep state of the bedroom
+     *
+     * @return sleepState
+     */
+    public boolean getSleepState() {
+        return sleepState;
+    }
+
+    /**
+     * @return Cost of bed  + cost of room.
      */
     @Override
     public int getCost() {
@@ -100,6 +111,7 @@ public class BedRoom extends Room {
     }
 
     /**
+     * Starts the AC. <br>
      * <ul>
      * <li>If the AC is off , turn it on and increment the electricity by 10 * volume of the room. </li>
      * <li>Otherwise increment the electricity bill by 5 * volume of the room. </li>
@@ -115,7 +127,7 @@ public class BedRoom extends Room {
     }
 
     /**
-     * @return For Bedroom : returns the electricity bill.
+     * @return The electricity bill.
      */
     public int getBill() {
         return electricityBill;

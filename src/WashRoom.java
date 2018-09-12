@@ -4,7 +4,7 @@
  * @author Shreyas Bhat
  */
 
-public class Washroom extends Room {
+public class WashRoom extends Room {
 
     /**
      * To keep track of the waterbill of the washroom.
@@ -22,20 +22,20 @@ public class Washroom extends Room {
      * @param roomHeight Height of the washroom.
      * @param type       FloorType of the washroom.
      */
-    public Washroom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
+    public WashRoom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         super(roomLength, roomWidth, roomHeight, type);
         this.waterBill = 0;
     }
 
     /**
-     * @return Return the waterbill for a washroom.
+     * @return The waterbill for a washroom.
      */
     public int getBill() {
         return waterBill;
     }
 
     /**
-     * @return For a washroom : if floortype is VINYL, then returns 10, else returns 20.
+     * @return If floortype is VINYL, then returns 10, else returns 20.
      */
     public int getCost() {
         if (type == FloorType.VINYL) {

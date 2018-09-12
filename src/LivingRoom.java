@@ -1,5 +1,6 @@
 /**
- *	This class simulates a Living Room. A boolean tvState is used to keep track whether the TV is on or not and an integer electricityBill is used.
+ * This class simulates a Living Room. A boolean tvState is used to keep track whether the TV is on or not and an integer electricityBill is used.
+ *
  * @author Shreyas Bhat
  */
 public class LivingRoom extends Room {
@@ -10,7 +11,7 @@ public class LivingRoom extends Room {
      * Set to True if on.
      */
     private boolean tvState;
-    
+
     /**
      * Stores the electricity bill for the livingroom.
      */
@@ -22,22 +23,23 @@ public class LivingRoom extends Room {
      * <li> Set electricityBill as 0 </li>
      * <li> Set tvState as false </li>
      * </ul>
+     *
      * @param roomLength Length of the livingroom.
-     * @param roomWidth Width of the livingroom.
+     * @param roomWidth  Width of the livingroom.
      * @param roomHeight Height of the livingroom.
-     * @param type FloorType of the livingroom.
+     * @param type       FloorType of the livingroom.
      */
     public LivingRoom(int roomLength, int roomWidth, int roomHeight, FloorType type) {
         super(roomLength, roomWidth, roomHeight, type);
         this.tvState = false;
         this.electricityBill = 0;
     }
-    
+
     /**
-     *  Simulates watching TV. <br>
-     *  <ul>
-     *  <li>If the TV is already on, then increment electricity bill by 5. </li>
-     *  <li>Otherwise switch on the TV and increment the electricity bill by 10. </li>
+     * Simulates watching TV. <br>
+     * <ul>
+     * <li>If the TV is already on, then increment electricity bill by 5. </li>
+     * <li>Otherwise switch on the TV and increment the electricity bill by 10. </li>
      * </ul>
      */
     public void watchTV() {
@@ -54,6 +56,14 @@ public class LivingRoom extends Room {
      */
     public int getBill() {
         return electricityBill;
+    }
+
+    /**
+     * Fetches the tvState.
+     * @return tvState of the room
+     */
+    public boolean getTvState() {
+        return tvState;
     }
 
 }

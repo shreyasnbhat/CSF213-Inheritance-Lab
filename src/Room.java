@@ -46,7 +46,7 @@ public abstract class Room {
      * <li>Volume is computed as (roomLength * roomWidth * roomHeight). </li>
      * </ul>
      *
-     * @return Return volume of the room.
+     * @return Volume of the room.
      */
     public int getVolume() {
         return (this.roomLength * this.roomWidth * this.roomHeight);
@@ -62,13 +62,31 @@ public abstract class Room {
     }
 
     /**
+     * Returns width of the room.
+     *
+     * @return Width roomWidth
+     */
+    public int getRoomWidth() {
+        return roomWidth;
+    }
+
+    /**
+     * Returns height of the room.
+     *
+     * @return Height roomHeight
+     */
+    public int getRoomHeight() {
+        return roomHeight;
+    }
+
+    /**
      * Computes the surface area of the room.
      * <br>
      * <ul>
      * <li>Surface Area is calculated as 2*(length * width + width * height + height * length). </li>
      * </ul>
      *
-     * @return Return surface area of the room.
+     * @return Surface area of the room.
      */
     public int getSurfaceArea() {
         return 2 * this.roomHeight * (this.roomLength + this.roomWidth) + 2 * this.roomLength * this.roomWidth;

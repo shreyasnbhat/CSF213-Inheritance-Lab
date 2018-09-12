@@ -1,23 +1,21 @@
-import static org.junit.Assert.fail;
-
-import java.util.Random;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+
 /**
- * Unit tests for Livingroom Class
+ * Unit tests for LivingRoom Class
  *
- * @author Kunal Dewan
+ * @author Kunal Dewan, Shreyas Bhat
  * @version 12/9/2018
  */
-public class LivingroomTest {
+public class LivingRoomTest {
 
-    private Livingroom room;
+    private LivingRoom room;
     private Random rand;
-	
+
 
     @Before
     public void before() {
@@ -30,22 +28,30 @@ public class LivingroomTest {
     }
 
     @Test
-    public void testLivingroomGetters() {
-    	
+    public void testLivingRoomGetters() {
+
         int length = rand.nextInt();
         int width = rand.nextInt();
         int height = rand.nextInt();
-        room = new Livingroom(length, width, height, FloorType.MARBLE);
-        
+        room = new LivingRoom(length, width, height, FloorType.MARBLE);
+
         //test getBill() when initialized
         Assert.assertEquals(0, room.getBill());
-        
+        Assert.assertFalse(room.getTvState());
+
         room.watchTV();
-        
+
+        Assert.assertTrue(room.getTvState());
         Assert.assertEquals(10, room.getBill());
+
         room.watchTV();
+        Assert.assertTrue(room.getTvState());
+
         Assert.assertEquals(15, room.getBill());
+
         room.watchTV();
+        Assert.assertTrue(room.getTvState());
+
         Assert.assertEquals(20, room.getBill());
 
 

@@ -3,7 +3,7 @@
  *
  * @author Shreyas Bhat
  */
-public class Building  {
+public class Building {
 
     /**
      * Length of the building.
@@ -51,7 +51,7 @@ public class Building  {
     /**
      * An inner class that represents a floor of a building.
      */
-    public class Floor  {
+    public class Floor {
 
         /**
          * An array of Rooms to store all rooms in a floor.
@@ -123,10 +123,24 @@ public class Building  {
          * <br>
          * Surface Area is calculated as 2 * ( length * width + width * height + height * length )
          *
-         * @return Return surface area of the building.
+         * @return Surface area of the building.
          */
         public int getSurfaceArea() {
             return 2 * this.floorHeight * (this.floorLength + this.floorWidth) + 2 * this.floorLength * this.floorWidth;
+        }
+
+        /**
+         * @return Width of the floor.
+         */
+        public int getFloorWidth() {
+            return floorWidth;
+        }
+
+        /**
+         * @return Length of the floor.
+         */
+        public int getFloorLength() {
+            return floorLength;
         }
 
         /**
@@ -138,18 +152,27 @@ public class Building  {
          * </ul>
          *
          * @param room Room object to be added to the floor
-         * @return true if room was added successfully, else return false.
+         * @return True if room was added successfully, else return false.
          */
         public boolean addRoom(Room room) {
             if (this.roomCount == this.maxRoomCount)
                 return false;
-            else if (room.getRoomLength() <= this.freeSpaceLeftForRoom) {
+            else if (room.getRoomLength() <= this.freeSpaceLeftForRoom && room.getRoomWidth() <= this.floorWidth && room.roomHeight <= this.floorHeight) {
                 this.rooms[this.roomCount++] = room;
                 this.freeSpaceLeftForRoom -= room.getRoomLength();
                 return true;
             } else {
                 return false;
             }
+        }
+
+        /**
+         * Returns number of rooms in a floor
+         *
+         * @return roomCount
+         */
+        public int getRoomCount() {
+            return roomCount;
         }
 
         /**

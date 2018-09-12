@@ -1,10 +1,9 @@
 /**
  * A simple representation of a bed.
- * Implements the IChargeable interface.
  *
  * @author Shreyas Bhat
  */
-public class Bed  {
+public class Bed {
 
 
     /**
@@ -40,7 +39,7 @@ public class Bed  {
     /**
      * Returns length of the bed.
      *
-     * @return Returns length of the bed.
+     * @return Length of the bed.
      */
     public int getLength() {
         return length;
@@ -49,7 +48,7 @@ public class Bed  {
     /**
      * Return width of the bed.
      *
-     * @return Returns width of the bed.
+     * @return Width of the bed.
      */
     public int getWidth() {
         return width;
